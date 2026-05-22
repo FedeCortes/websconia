@@ -9,7 +9,7 @@ const pasos = [
     num: '02',
     icon: '⚡',
     titulo: 'Creás la web',
-    desc: 'Con los prompts y templates incluidos, armás una web profesional en menos de 30 minutos.',
+    desc: 'Con las herramientas que yo uso y los prompts armás una web profesional en menos de 30 minutos.',
   },
   {
     num: '03',

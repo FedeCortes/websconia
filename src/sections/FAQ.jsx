@@ -7,7 +7,7 @@ const faqs = [
   },
   {
     q: '¿Funciona si nunca hice una web?',
-    a: 'Sí. Está pensado para personas sin experiencia. Los prompts y templates hacen el trabajo pesado.',
+    a: 'Sí. Está pensado para personas sin experiencia. Mis herramientas y los prompts hacen el trabajo pesado.',
   },
   {
     q: '¿Cómo consigo clientes?',
