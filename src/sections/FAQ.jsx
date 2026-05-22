@@ -3,7 +3,7 @@ import { useState } from 'react'
 const faqs = [
   {
     q: '¿Necesito saber programar?',
-    a: 'No. Usás herramientas de IA que generan el código y el diseño. Vos solo configurás y entregás.',
+    a: 'No. Usás herramientas de IA que generan el código y el diseño. Solo necesitas una pc, internet, configurar y entregás.',
   },
   {
     q: '¿Funciona si nunca hice una web?',

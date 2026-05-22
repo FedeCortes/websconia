@@ -40,10 +40,11 @@ export default function Hero() {
         {/* Herramientas */}
         <div className="flex flex-wrap items-center justify-center gap-2">
           {[
-            { icon: '🤖', label: 'ChatGPT / Claude' },
-            { icon: '🗺️', label: 'Google Maps' },
+            { icon: '🤖', label: 'Claude Code' },
+            { icon: '📱', label: 'Redes sociales' },
             { icon: '💬', label: 'WhatsApp' },
-            { icon: '⚡', label: 'Sin programar' },
+            { icon: '🗺️', label: 'Google Maps' },
+            { icon: '⚡', label: 'Sin experiencia' },
           ].map((t) => (
             <span
               key={t.label}
