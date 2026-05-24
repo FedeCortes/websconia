@@ -1,9 +1,8 @@
 import { trackCheckoutClick } from '../utils/tracking'
 
-// CHECKOUT_URL — página del producto en Shopify. Funciona para clientes.
-// Si en algún momento Shopify te da un link directo al checkout, reemplazalo acá.
+// CHECKOUT_URL — link directo al checkout de Shopify.
 export const CHECKOUT_URL =
-  'https://0r1qck-r1.myshopify.com/products/crea-webs-con-ia-en-minutos-y-cobralas-mensualmente'
+  'https://0r1qck-r1.myshopify.com/checkouts/cn/hWNCWNVAjTGu1HIFlaKOM20g/es-ar?_r=AQAB0X2BpwcObo3zHHQ9KTsntL0ltuvDaukSxJ9PkGKd97I&preview_theme_id=153871810746'
 
 export default function CTAButton({ label = 'QUIERO EMPEZAR AHORA', size = 'md', ctaId = 'generic', className = '' }) {
   const handleClick = () => {
