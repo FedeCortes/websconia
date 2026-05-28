@@ -25,7 +25,7 @@ export default function Hero() {
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-white">
           Creá webs con IA{' '}
-          <span className="text-neon glow-text">en minutos</span>
+          <span className="text-neon glow-text">en 30 minutos.</span>
           <br />y cobralas{' '}
           <span className="text-neon glow-text">mensualmente</span>
         </h1>
@@ -40,11 +40,9 @@ export default function Hero() {
         {/* Herramientas */}
         <div className="flex flex-wrap items-center justify-center gap-2">
           {[
+            { icon: '🔐', label: 'Herramientas secretas' },
             { icon: '🤖', label: 'Claude Code' },
-            { icon: '📱', label: 'Redes sociales' },
-            { icon: '💬', label: 'WhatsApp' },
             { icon: '🗺️', label: 'Google Maps' },
-            { icon: '⚡', label: 'Sin experiencia' },
           ].map((t) => (
             <span
               key={t.label}
