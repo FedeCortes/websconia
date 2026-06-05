@@ -36,8 +36,22 @@
 
 <script>
   var CHECKOUT_URL = 'https://0r1qck-r1.myshopify.com/checkouts/cn/hWNCyTcySebc04MzU2qVWtoQ/es-ar?_r=AQAB-M9ZZF1QSUztvxIZ9JkAdCYjIQ5UiMqJAsCWhU0xmbQ&preview_theme_id=153871810746';
+  // Guard contra doble-click y event bubbling
+  var _checkoutFired = false;
+
   function goCheckout(label) {
-    if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: label || 'generic' });
+    if (_checkoutFired) return;
+    _checkoutFired = true;
+
+    // Landing solo dispara Lead — InitiateCheckout y Purchase los maneja Shopify
+    if (window.fbq) {
+      fbq('track', 'Lead', {
+        content_name: 'Presence Curso Webs IA',
+        content_category: 'curso_webs_ia',
+        currency: 'ARS'
+      });
+    }
+
     window.location.href = CHECKOUT_URL;
   }
 </script>
