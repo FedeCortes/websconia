@@ -63,10 +63,10 @@
     --negro: #0A0A0A;
     --gris-oscuro: #111111;
     --gris-medio: #1A1A1A;
-    --gris-borde: #2A2A2A;
+    --gris-borde: #333333;
     --blanco: #FFFFFF;
-    --blanco-suave: #E8E8E8;
-    --gris-texto: #888888;
+    --blanco-suave: #e8eaed;
+    --gris-texto: #9ca3af;
     --rojo: #FF4444;
   }
 
@@ -77,7 +77,7 @@
     color: var(--blanco);
     font-family: 'DM Sans', sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.75;
     overflow-x: hidden;
   }
 
@@ -86,11 +86,12 @@
     background: var(--verde);
     color: var(--negro);
     text-align: center;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: 13px;
     letter-spacing: 0.5px;
+    line-height: 1.5;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -98,8 +99,15 @@
 
   .top-bar span {
     text-decoration: line-through;
-    opacity: 0.6;
+    opacity: 0.55;
     margin-right: 6px;
+  }
+
+  .top-bar strong {
+    background: rgba(0,0,0,0.15);
+    padding: 1px 8px;
+    border-radius: 4px;
+    letter-spacing: 1.5px;
   }
 
   /* HERO */
@@ -156,6 +164,7 @@
     max-width: 600px;
     margin: 0 auto 16px;
     font-weight: 400;
+    line-height: 1.7;
   }
 
   .hero-sub strong {
@@ -198,18 +207,24 @@
     font-weight: 800;
     font-size: 18px;
     letter-spacing: 1px;
-    padding: 18px 48px;
-    border-radius: 4px;
+    padding: 20px 56px;
+    border-radius: 6px;
     text-decoration: none;
     text-transform: uppercase;
     transition: transform 0.15s, box-shadow 0.15s;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,255,127,0.2);
   }
 
   .cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0,255,127,0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,255,127,0.45);
+  }
+
+  .cta-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0,255,127,0.2);
   }
 
   .cta-sub {
@@ -281,9 +296,9 @@
   }
 
   .dolor-item p {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--blanco-suave);
-    line-height: 1.5;
+    line-height: 1.65;
   }
 
   .dolor-item p strong {
@@ -351,8 +366,9 @@
 
   .producto-def {
     font-size: 17px;
-    color: var(--gris-texto);
+    color: var(--blanco-suave);
     margin-bottom: 8px;
+    line-height: 1.65;
   }
 
   /* APP PREVIEW */
@@ -387,7 +403,7 @@
   }
 
   .app-stat .label {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--gris-texto);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -490,9 +506,9 @@
   }
 
   .feature-desc {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--gris-texto);
-    line-height: 1.6;
+    line-height: 1.72;
   }
 
   /* PRECIO */
@@ -547,7 +563,7 @@
   }
 
   .precio-cuotas {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--gris-texto);
     margin-bottom: 32px;
   }
@@ -595,9 +611,10 @@
   }
 
   .bono-desc {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--gris-texto);
-    margin-top: 2px;
+    margin-top: 3px;
+    line-height: 1.6;
   }
 
   .bono-precio {
@@ -606,7 +623,7 @@
   }
 
   .bono-valor {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--gris-texto);
     text-decoration: line-through;
   }
@@ -643,9 +660,9 @@
   }
 
   .testimonio-texto {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--blanco-suave);
-    line-height: 1.7;
+    line-height: 1.75;
     margin-bottom: 16px;
     font-style: italic;
   }
@@ -672,7 +689,7 @@
 
   .testimonio-nombre {
     font-weight: 600;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--blanco);
   }
 
@@ -694,9 +711,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 24px;
+    padding: 16px 24px;
     border-bottom: 1px solid var(--gris-borde);
-    font-size: 14px;
+    font-size: 15px;
     gap: 12px;
   }
 
@@ -758,11 +775,11 @@
   }
 
   .garantia-texto {
-    font-size: 15px;
-    color: var(--gris-texto);
+    font-size: 16px;
+    color: var(--blanco-suave);
     max-width: 520px;
     margin: 0 auto;
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
   /* FAQ */
@@ -789,9 +806,9 @@
   }
 
   .faq-respuesta {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--gris-texto);
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
   .faq-respuesta strong { color: var(--verde); }
@@ -806,9 +823,9 @@
 
   .cierre-texto {
     font-size: 17px;
-    color: var(--gris-texto);
+    color: var(--blanco-suave);
     margin-bottom: 40px;
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
   .cierre-texto strong { color: var(--blanco); }
@@ -839,15 +856,24 @@
   }
 
   @media (max-width: 600px) {
+    .top-bar {
+      font-size: 12px;
+      padding: 10px 14px;
+      white-space: normal;
+      line-height: 1.65;
+      letter-spacing: 0.2px;
+    }
     .hero { padding: 60px 16px 48px; }
-    section { padding: 48px 16px; }
+    section { padding: 52px 18px; }
     .precio-seccion { padding: 32px 20px; }
     .precio-ahora-grande { font-size: 72px; }
     .app-stat-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .bono-card { flex-direction: column; align-items: flex-start; }
     .bono-precio { text-align: left; }
     .garantia-bloque { padding: 28px 20px; }
-    .stack-fila { flex-direction: column; align-items: flex-start; gap: 2px; }
+    .stack-fila { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .cta-btn { padding: 18px 32px; font-size: 16px; width: 100%; text-align: center; }
+    .enemigo-bloque { padding: 22px 20px; }
   }
 </style>
 </head>
