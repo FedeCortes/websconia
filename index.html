@@ -1,42 +1,1276 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Aprendé a crear webs con IA en minutos y cobralas mensualmente a negocios locales." />
-    <title>Webs con IA · Cobrá Mensualmente</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Sistema Presence — Conseguí tu primer cliente web esta semana</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- ====================================================
-         META PIXEL — pegá tu código de Meta Pixel aquí
-         ====================================================
-    <script>
-      !function(f,b,e,v,n,t,s){...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'TU_PIXEL_ID');
-      fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/>
-    </noscript>
-    ==================================================== -->
+<!-- ====================================================
+     META PIXEL — pegá tu código de Meta Pixel aquí
+     ====================================================
+<script>
+  !function(f,b,e,v,n,t,s){...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'TU_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/>
+</noscript>
+==================================================== -->
 
-    <!-- ====================================================
-         GOOGLE ANALYTICS — pegá tu tag de GA4 aquí
-         ====================================================
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    ==================================================== -->
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!-- ====================================================
+     GOOGLE ANALYTICS — pegá tu tag de GA4 aquí
+     ====================================================
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+==================================================== -->
+
+<script>
+  var CHECKOUT_URL = 'https://0r1qck-r1.myshopify.com/checkouts/cn/hWNCyTcySebc04MzU2qVWtoQ/es-ar?_r=AQAB-M9ZZF1QSUztvxIZ9JkAdCYjIQ5UiMqJAsCWhU0xmbQ&preview_theme_id=153871810746';
+  function goCheckout(label) {
+    console.log('[tracking] checkout_click —', label || 'generic');
+    window.location.href = CHECKOUT_URL;
+  }
+</script>
+
+<style>
+  :root {
+    --verde: #00FF7F;
+    --verde-oscuro: #00C060;
+    --negro: #0A0A0A;
+    --gris-oscuro: #111111;
+    --gris-medio: #1A1A1A;
+    --gris-borde: #2A2A2A;
+    --blanco: #FFFFFF;
+    --blanco-suave: #E8E8E8;
+    --gris-texto: #888888;
+    --rojo: #FF4444;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* BARRA SUPERIOR */
+  .top-bar {
+    background: var(--verde);
+    color: var(--negro);
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar span {
+    text-decoration: line-through;
+    opacity: 0.6;
+    margin-right: 6px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--negro);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,255,127,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-pretitulo {
+    display: inline-block;
+    background: rgba(0,255,127,0.1);
+    border: 1px solid rgba(0,255,127,0.3);
+    color: var(--verde);
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 10vw, 100px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    color: var(--blanco);
+    margin-bottom: 12px;
+  }
+
+  .hero h1 .verde { color: var(--verde); }
+
+  .hero-sub {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(16px, 3vw, 22px);
+    color: var(--blanco-suave);
+    max-width: 600px;
+    margin: 0 auto 16px;
+    font-weight: 400;
+  }
+
+  .hero-sub strong {
+    color: var(--verde);
+    font-weight: 700;
+  }
+
+  .hero-precio-bloque {
+    margin: 32px auto 40px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .precio-antes {
+    font-size: 16px;
+    color: var(--gris-texto);
+    text-decoration: line-through;
+  }
+
+  .precio-ahora {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: var(--verde);
+    line-height: 1;
+  }
+
+  .precio-nota {
+    font-size: 13px;
+    color: var(--gris-texto);
+    letter-spacing: 0.5px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--verde);
+    color: var(--negro);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 18px 48px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,255,127,0.35);
+  }
+
+  .cta-sub {
+    font-size: 13px;
+    color: var(--gris-texto);
+    margin-top: 12px;
+  }
+
+  /* SEPARADOR */
+  .sep {
+    height: 1px;
+    background: var(--gris-borde);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* SECCIONES */
+  section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 20px;
+  }
+
+  .tag-seccion {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--verde);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 58px);
+    letter-spacing: 1.5px;
+    line-height: 1;
+    color: var(--blanco);
+    margin-bottom: 24px;
+  }
+
+  h2 .verde { color: var(--verde); }
+  h2 .gris { color: var(--gris-texto); }
+
+  /* IDENTIFICACION */
+  .dolor-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .dolor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+
+  .dolor-item .icono {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .dolor-item p {
+    font-size: 15px;
+    color: var(--blanco-suave);
+    line-height: 1.5;
+  }
+
+  .dolor-item p strong {
+    color: var(--blanco);
+    display: block;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  /* ENEMIGO */
+  .enemigo-bloque {
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-left: 4px solid var(--rojo);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-top: 28px;
+  }
+
+  .enemigo-bloque h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--rojo);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .enemigo-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .enemigo-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--blanco-suave);
+  }
+
+  .enemigo-lista li::before {
+    content: '✗';
+    color: var(--rojo);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* SOLUCION */
+  .producto-nombre {
+    display: inline-block;
+    background: var(--verde);
+    color: var(--negro);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 3px;
+    padding: 6px 24px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  .producto-def {
+    font-size: 17px;
+    color: var(--gris-texto);
+    margin-bottom: 8px;
+  }
+
+  /* APP PREVIEW */
+  .app-preview {
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 32px;
+  }
+
+  .app-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .app-stat {
+    background: var(--negro);
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 16px 12px;
+    text-align: center;
+  }
+
+  .app-stat .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--verde);
+    line-height: 1;
+  }
+
+  .app-stat .label {
+    font-size: 11px;
+    color: var(--gris-texto);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  .app-lead-ejemplo {
+    background: var(--negro);
+    border: 1px solid #1E3A2A;
+    border-left: 3px solid var(--verde);
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .app-lead-nombre {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--blanco);
+  }
+
+  .app-lead-meta {
+    font-size: 12px;
+    color: var(--gris-texto);
+    margin-top: 2px;
+  }
+
+  .badge-sin-web {
+    background: rgba(255,68,68,0.15);
+    border: 1px solid rgba(255,68,68,0.4);
+    color: var(--rojo);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-puntaje {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--verde);
+    line-height: 1;
+  }
+
+  .badge-puntaje span {
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--gris-texto);
+    display: block;
+    text-align: center;
+  }
+
+  /* FEATURES */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .feature-card {
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-radius: 12px;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--verde);
+  }
+
+  .feature-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: rgba(0,255,127,0.12);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .feature-titulo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--blanco);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .feature-desc {
+    font-size: 14px;
+    color: var(--gris-texto);
+    line-height: 1.6;
+  }
+
+  /* PRECIO */
+  .precio-seccion {
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-radius: 16px;
+    padding: 48px 40px;
+    text-align: center;
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .precio-seccion::before {
+    content: '';
+    position: absolute;
+    top: -150px; left: 50%;
+    transform: translateX(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,255,127,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .precio-badge {
+    display: inline-block;
+    background: rgba(255,68,68,0.15);
+    border: 1px solid rgba(255,68,68,0.3);
+    color: var(--rojo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .precio-antes-grande {
+    font-size: 22px;
+    color: var(--gris-texto);
+    text-decoration: line-through;
+    margin-bottom: 8px;
+  }
+
+  .precio-ahora-grande {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 96px;
+    color: var(--verde);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .precio-cuotas {
+    font-size: 14px;
+    color: var(--gris-texto);
+    margin-bottom: 32px;
+  }
+
+  /* BONOS */
+  .bonos-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .bono-card {
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .bono-izq {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .bono-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--verde);
+    opacity: 0.4;
+    flex-shrink: 0;
+    width: 36px;
+  }
+
+  .bono-nombre {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--blanco);
+  }
+
+  .bono-desc {
+    font-size: 13px;
+    color: var(--gris-texto);
+    margin-top: 2px;
+  }
+
+  .bono-precio {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .bono-valor {
+    font-size: 12px;
+    color: var(--gris-texto);
+    text-decoration: line-through;
+  }
+
+  .bono-gratis {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--verde);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* TESTIMONIOS */
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .testimonio-card {
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .testimonio-estrellas {
+    color: #FFB800;
+    font-size: 14px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+  .testimonio-texto {
+    font-size: 14px;
+    color: var(--blanco-suave);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .testimonio-autor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .testimonio-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--negro);
+    flex-shrink: 0;
+  }
+
+  .testimonio-nombre {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--blanco);
+  }
+
+  .testimonio-ciudad {
+    font-size: 12px;
+    color: var(--gris-texto);
+  }
+
+  /* STACK TOTAL */
+  .stack-tabla {
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 32px;
+  }
+
+  .stack-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--gris-borde);
+    font-size: 14px;
+    gap: 12px;
+  }
+
+  .stack-fila:last-child { border-bottom: none; }
+
+  .stack-fila .item { color: var(--blanco-suave); flex: 1; }
+  .stack-fila .val {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--verde);
+    white-space: nowrap;
+  }
+
+  .stack-total {
+    background: rgba(0,255,127,0.06);
+    border-top: 2px solid var(--verde);
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stack-total .label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--blanco);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .stack-total .val-total {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--verde);
+  }
+
+  /* GARANTIA */
+  .garantia-bloque {
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-radius: 12px;
+    padding: 36px 40px;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .garantia-icono {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .garantia-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: var(--blanco);
+    margin-bottom: 16px;
+  }
+
+  .garantia-texto {
+    font-size: 15px;
+    color: var(--gris-texto);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* FAQ */
+  .faq-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .faq-item {
+    background: var(--gris-medio);
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 20px 24px;
+  }
+
+  .faq-pregunta {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--blanco);
+    margin-bottom: 10px;
+  }
+
+  .faq-respuesta {
+    font-size: 14px;
+    color: var(--gris-texto);
+    line-height: 1.7;
+  }
+
+  .faq-respuesta strong { color: var(--verde); }
+
+  /* CIERRE */
+  .cierre {
+    text-align: center;
+    padding: 64px 20px 80px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cierre-texto {
+    font-size: 17px;
+    color: var(--gris-texto);
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+
+  .cierre-texto strong { color: var(--blanco); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--gris-borde);
+    padding: 24px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--gris-texto);
+  }
+
+  footer a { color: var(--gris-texto); text-decoration: none; }
+
+  /* URGENCIA */
+  .urgencia-strip {
+    background: rgba(255,68,68,0.08);
+    border-top: 1px solid rgba(255,68,68,0.2);
+    border-bottom: 1px solid rgba(255,68,68,0.2);
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--rojo);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 16px 48px; }
+    section { padding: 48px 16px; }
+    .precio-seccion { padding: 32px 20px; }
+    .precio-ahora-grande { font-size: 72px; }
+    .app-stat-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .bono-card { flex-direction: column; align-items: flex-start; }
+    .bono-precio { text-align: left; }
+    .garantia-bloque { padding: 28px 20px; }
+    .stack-fila { flex-direction: column; align-items: flex-start; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BARRA SUPERIOR -->
+<div class="top-bar">
+  🔥 OFERTA DE LANZAMIENTO — <span>$67 USD</span> HOY SOLO $27.000 ARS &nbsp;·&nbsp; <strong>EL SISTEMA PRESENCE</strong> &nbsp;·&nbsp; Quedan pocas horas
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-pretitulo">Acceso inmediato · Sin experiencia previa · Sin saber programar</div>
+  <p style="font-family: 'Syne', sans-serif; font-size: clamp(13px, 2vw, 16px); color: var(--gris-texto); margin-bottom: 8px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Anunciando el sistema completo para</p>
+  <h1>CREAR WEBS<br>CON IA Y<br><span class="verde">COBRARLAS</span><br>MENSUALMENTE</h1>
+  <p class="hero-sub">
+    La app que encuentra los clientes + los prompts para crear la web en minutos + el método para cobrar mes a mes — <strong>aunque nunca hayas vendido nada antes</strong>
+  </p>
+
+  <div style="margin-top: 36px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+    <div style="text-align: center;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--verde); line-height: 1;">30 DÍAS</div>
+      <div style="font-size: 12px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 1px;">Presence Leads incluido</div>
+    </div>
+    <div style="width: 1px; background: var(--gris-borde);"></div>
+    <div style="text-align: center;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--verde); line-height: 1;">IA</div>
+      <div style="font-size: 12px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 1px;">Webs en minutos</div>
+    </div>
+    <div style="width: 1px; background: var(--gris-borde);"></div>
+    <div style="text-align: center;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--verde); line-height: 1;">✓</div>
+      <div style="font-size: 12px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 1px;">Comunidad de por vida</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px;">
+    <p style="font-size: 13px; color: var(--gris-texto); letter-spacing: 1px; text-transform: uppercase;">↓ Seguí leyendo</p>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- IDENTIFICACION -->
+<section>
+  <span class="tag-seccion">Este sistema es para vos si...</span>
+  <h2>¿ALGUNA VEZ TE <span class="verde">PREGUNTASTE</span> ESTO?</h2>
+
+  <div class="dolor-lista">
+    <div class="dolor-item">
+      <div class="icono">✓</div>
+      <p><strong>Querés generar ingresos pero no sabés por dónde empezar</strong>
+      Ves a otros generando plata online y te preguntás si a vos también te puede funcionar, pero no tenés ni idea de cómo arrancar sin capital.</p>
+    </div>
+    <div class="dolor-item">
+      <div class="icono">✓</div>
+      <p><strong>Pensaste en hacer webs pero no sabés programar</strong>
+      Te pareció buena idea, buscaste algo en YouTube, te perdiste entre código y herramientas raras, y lo dejaste para después. Ese "después" nunca llegó.</p>
+    </div>
+    <div class="dolor-item">
+      <div class="icono">✓</div>
+      <p><strong>Salís a buscar clientes y no sabés quién necesita una web</strong>
+      Mandás mensajes a conocidos, publicás en redes, y nadie te responde. No tenés un sistema para encontrar a los que de verdad necesitan el servicio.</p>
+    </div>
+    <div class="dolor-item">
+      <div class="icono">✓</div>
+      <p><strong>Probaste herramientas de IA pero no lográs nada concreto</strong>
+      Usaste ChatGPT, probaste cosas, pero nunca terminaste nada real que puedas mostrar ni vender. La IA sin método es un juguete, no un negocio.</p>
+    </div>
+    <div class="dolor-item">
+      <div class="icono">✓</div>
+      <p><strong>Querés independencia pero seguís dependiendo de un sueldo</strong>
+      Sabés que hay otra forma de vivir pero cada vez que intentás algo distinto, pasan meses sin resultados y terminás tirando la toalla.</p>
+    </div>
+  </div>
+
+  <div class="enemigo-bloque">
+    <h3>⚠ El verdadero problema no sos vos</h3>
+    <ul class="enemigo-lista">
+      <li>Los cursos de "hacé webs y ganá plata" te enseñan diseño pero no te dan los clientes</li>
+      <li>Las agencias que ofrecen trabajo freelance te pagan una miseria y se quedan con el margen</li>
+      <li>Los gurus de redes te venden el sueño pero no te dan el sistema paso a paso</li>
+      <li>Las herramientas de IA genéricas no están configuradas para conseguir clientes reales</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRUEBA SOCIAL TEMPRANA -->
+<div style="background: var(--gris-medio); border-top: 1px solid var(--gris-borde); border-bottom: 1px solid var(--gris-borde); padding: 32px 20px;">
+  <div style="max-width: 860px; margin: 0 auto;">
+    <p style="text-align: center; font-size: 11px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-family: 'Syne', sans-serif; font-weight: 700;">Lo que dicen los que ya lo aplicaron</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+      <div style="background: var(--negro); border: 1px solid var(--gris-borde); border-radius: 10px; padding: 20px;">
+        <p style="font-size: 14px; color: var(--blanco-suave); font-style: italic; line-height: 1.6; margin-bottom: 12px;">"En dos semanas ya estábamos recibiendo consultas online. Increíble."</p>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--negro); flex-shrink: 0;">MG</div>
+          <span style="font-size: 12px; color: var(--gris-texto);">Marcela G. · Buenos Aires</span>
+        </div>
+      </div>
+      <div style="background: var(--negro); border: 1px solid var(--gris-borde); border-radius: 10px; padding: 20px;">
+        <p style="font-size: 14px; color: var(--blanco-suave); font-style: italic; line-height: 1.6; margin-bottom: 12px;">"La web quedó mejor de lo que esperaba. Rápido, profesional y con seguimiento."</p>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--negro); flex-shrink: 0;">RL</div>
+          <span style="font-size: 12px; color: var(--gris-texto);">Roberto L. · GBA Norte</span>
+        </div>
+      </div>
+      <div style="background: var(--negro); border: 1px solid var(--gris-borde); border-radius: 10px; padding: 20px;">
+        <p style="font-size: 14px; color: var(--blanco-suave); font-style: italic; line-height: 1.6; margin-bottom: 12px;">"Vale cada peso. El resultado fue excelente y Fede fue muy paciente."</p>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--negro); flex-shrink: 0;">CP</div>
+          <span style="font-size: 12px; color: var(--gris-texto);">Claudia P. · Buenos Aires</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- SOLUCION -->
+<section>
+  <span class="tag-seccion">La solución definitiva</span>
+  <div class="producto-nombre">EL SISTEMA PRESENCE</div>
+  <p class="producto-def">La única herramienta que te muestra quién necesita una web, te ayuda a crearla en minutos y te dice cómo cobrarla mensualmente</p>
+  <p style="font-size: 13px; color: var(--gris-texto); margin-top: 8px; font-family: 'Syne', sans-serif;">by <strong style="color: var(--blanco);">Federico · presence.com.ar</strong></p>
+  <h2>ASÍ FUNCIONA <span class="verde">LA APP</span> QUE VIENE INCLUIDA</h2>
+
+  <div class="app-preview">
+    <div class="app-stat-grid">
+      <div class="app-stat">
+        <div class="num">60</div>
+        <div class="label">Negocios encontrados</div>
+      </div>
+      <div class="app-stat">
+        <div class="num" style="color: #FF4444;">19</div>
+        <div class="label">Sin web</div>
+      </div>
+      <div class="app-stat">
+        <div class="num">42%</div>
+        <div class="label">% oportunidades</div>
+      </div>
+    </div>
+    <p style="font-size: 13px; color: var(--gris-texto); margin-bottom: 16px;">Esto es lo que ve un usuario real buscando en Don Torcuato, Buenos Aires. <strong style="color: var(--blanco);">19 clientes potenciales en 2km.</strong> Podés buscar en cualquier ciudad o zona del país.</p>
+    <div class="app-lead-ejemplo">
+      <div>
+        <div class="app-lead-nombre">Loma Negra — Lomax Torcuato</div>
+        <div class="app-lead-meta">📍 Av. G. Belgrano 1790 · ⭐ 4.5 (74 reseñas) · Sin presencia web</div>
+        <div style="margin-top: 8px;"><span class="badge-sin-web">SIN WEB</span></div>
+      </div>
+      <div style="text-align: right;">
+        <div class="badge-puntaje">100<span>PRIORIDAD</span></div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: var(--gris-texto); margin-top: 12px; text-align: center;">→ Negocio real. 74 reseñas. Sin web. Listo para contactar con un clic.</p>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- FEATURES -->
+<section>
+  <span class="tag-seccion">Lo que te llega hoy</span>
+  <h2>3 HERRAMIENTAS QUE <span class="verde">NINGÚN CURSO</span> TE DA JUNTAS</h2>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-num">01</div>
+      <div class="feature-titulo">Presence Leads — 30 días incluidos</div>
+      <p class="feature-desc">Elegís cualquier ciudad, zona o rubro — la tuya, la de al lado, o una a 500km. La app escanea todos los negocios sin web y los ordena por prioridad de 0 a 100. No perdés tiempo evaluando: la app ya te dice a quién contactar primero. WhatsApp, Maps y teléfono en un clic.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">02</div>
+      <div class="feature-titulo">Pack de prompts — Webs en minutos</div>
+      <p class="feature-desc">Los prompts exactos y probados para crear webs profesionales con herramientas de IA sin saber programar. Copiás el prompt, lo pegás, y en minutos tenés una web lista para mostrarle al cliente. Sin diseño, sin código, sin años de experiencia.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">03</div>
+      <div class="feature-titulo">Sistema de cobro mensual</div>
+      <p class="feature-desc">El método para estructurar tu servicio como mensualidad recurrente: qué decirle al cliente, cómo justificar el precio mensual, cómo escalar de 1 cliente a 10. Incluye los scripts de cierre y las objeciones más comunes resueltas.<br><br><strong style="color: var(--verde);">¿Y el setup?</strong> La mensualidad es la base — pero si querés cobrar un pago inicial por la creación de la web (setup), podés hacerlo. Muchos clientes del sistema cobran entre $50.000 y $150.000 ARS de setup más la mensualidad. Son dos palancas de ingreso, no una.</p>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--gris-borde);">
+    <p style="font-size: 15px; color: var(--gris-texto); margin-bottom: 20px;">¿Ya viste suficiente? Accedé ahora.</p>
+    <a href="javascript:void(0)" onclick="goCheckout('features')" class="cta-btn">QUIERO EL SISTEMA PRESENCE →</a>
+    <p class="cta-sub" style="margin-top: 12px;">Pago único · Acceso inmediato · 30 días de garantía</p>
+  </div>
+</section>
+
+<div class="urgencia-strip">
+  ⚡ OFERTA DE LANZAMIENTO — Este precio no se repite. Me reservo el derecho de cerrarlo en cualquier momento.
+</div>
+
+<!-- PRECIO -->
+<section>
+  <span class="tag-seccion">La inversión</span>
+  <div class="precio-seccion">
+    <div class="precio-badge">⏰ Solo por hoy — precio de lanzamiento</div>
+    <p class="precio-antes-grande">$67 USD (precio normal)</p>
+    <div class="precio-ahora-grande">$27.000</div>
+    <p class="precio-cuotas">ARS · Un solo pago · Sin cargos adicionales ni suscripciones</p>
+    <a href="javascript:void(0)" onclick="goCheckout('precio')" class="cta-btn">AGREGAR AL CARRITO →</a>
+    <p class="cta-sub" style="margin-top: 16px;">Mercado Pago · Tarjeta · Transferencia</p>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- BONOS -->
+<section>
+  <span class="tag-seccion">Bonos incluidos sin costo adicional</span>
+  <h2>TODO LO QUE <span class="verde">RECIBÍS</span> HOY</h2>
+
+  <div class="bonos-grid">
+    <div class="bono-card">
+      <div class="bono-izq">
+        <div class="bono-num">01</div>
+        <div>
+          <div class="bono-nombre">Acceso a Presence Leads — 30 días</div>
+          <div class="bono-desc">La app que detecta negocios sin web en cualquier zona o ciudad que elijas</div>
+        </div>
+      </div>
+      <div class="bono-precio">
+        <div class="bono-valor">Acceso incluido</div>
+        <div class="bono-gratis">INCLUIDO</div>
+      </div>
+    </div>
+    <div class="bono-card">
+      <div class="bono-izq">
+        <div class="bono-num">02</div>
+        <div>
+          <div class="bono-nombre">Pack Prompts — Cierre Express</div>
+          <div class="bono-desc">Los mensajes exactos para contactar un negocio y que te digan que sí</div>
+        </div>
+      </div>
+      <div class="bono-precio">
+        <div class="bono-valor">Valor $29 USD</div>
+        <div class="bono-gratis">GRATIS</div>
+      </div>
+    </div>
+    <div class="bono-card">
+      <div class="bono-izq">
+        <div class="bono-num">03</div>
+        <div>
+          <div class="bono-nombre">Checklist Cero Error — Demo en 24hs</div>
+          <div class="bono-desc">El paso a paso para crear y mostrar una demo al cliente el mismo día que lo contactás</div>
+        </div>
+      </div>
+      <div class="bono-precio">
+        <div class="bono-valor">Valor $19 USD</div>
+        <div class="bono-gratis">GRATIS</div>
+      </div>
+    </div>
+    <div class="bono-card">
+      <div class="bono-izq">
+        <div class="bono-num">04</div>
+        <div>
+          <div class="bono-nombre">Ruta Express — Primer Cliente en 7 Días</div>
+          <div class="bono-desc">El plan día a día de qué hacer exactamente la primera semana para cerrar tu primer cliente</div>
+        </div>
+      </div>
+      <div class="bono-precio">
+        <div class="bono-valor">Valor $27 USD</div>
+        <div class="bono-gratis">GRATIS</div>
+      </div>
+    </div>
+    <div class="bono-card">
+      <div class="bono-izq">
+        <div class="bono-num">05</div>
+        <div>
+          <div class="bono-nombre">Comunidad privada de compradores (de por vida)</div>
+          <div class="bono-desc">Grupo privado donde Fede responde dudas y los miembros se ayudan entre sí</div>
+        </div>
+      </div>
+      <div class="bono-precio">
+        <div class="bono-valor">Incalculable</div>
+        <div class="bono-gratis">INCLUIDO</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="javascript:void(0)" onclick="goCheckout('bonos')" class="cta-btn">SÍ, QUIERO EL SISTEMA PRESENCE →</a>
+    <p class="cta-sub" style="margin-top: 12px;">Pago único · Acceso inmediato · 30 días de garantía</p>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- TESTIMONIOS -->
+<section>
+  <span class="tag-seccion">Lo que dicen los clientes de presence.com.ar</span>
+  <h2>RESULTADOS <span class="verde">REALES</span></h2>
+
+  <div class="testimonios-grid">
+    <div class="testimonio-card">
+      <div class="testimonio-estrellas">★★★★★</div>
+      <p class="testimonio-texto">"Tenía un local hace años y nunca había considerado tener web. Fede me mostró lo que perdía y en dos semanas ya estábamos recibiendo consultas online. Increíble."</p>
+      <div class="testimonio-autor">
+        <div class="testimonio-avatar">MG</div>
+        <div>
+          <div class="testimonio-nombre">Marcela G.</div>
+          <div class="testimonio-ciudad">Buenos Aires · Cliente de Presence</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonio-card">
+      <div class="testimonio-estrellas">★★★★★</div>
+      <p class="testimonio-texto">"La web quedó mejor de lo que esperaba. Rápido, profesional y con seguimiento. Ahora lo recomiendo a todos los del barrio comercial."</p>
+      <div class="testimonio-autor">
+        <div class="testimonio-avatar">RL</div>
+        <div>
+          <div class="testimonio-nombre">Roberto L.</div>
+          <div class="testimonio-ciudad">GBA Norte · Cliente de Presence</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonio-card">
+      <div class="testimonio-estrellas">★★★★★</div>
+      <p class="testimonio-texto">"No tenía idea de lo que significaba tener presencia online. Fede me explicó todo, fue paciente y el resultado fue excelente. Vale cada peso."</p>
+      <div class="testimonio-autor">
+        <div class="testimonio-avatar">CP</div>
+        <div>
+          <div class="testimonio-nombre">Claudia P.</div>
+          <div class="testimonio-ciudad">Buenos Aires · Cliente de Presence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- STACK TOTAL -->
+<section>
+  <span class="tag-seccion">El valor real de lo que recibís</span>
+  <h2>TODO ESTO POR <span class="verde">$27.000 ARS</span></h2>
+
+  <div class="stack-tabla">
+    <div class="stack-fila">
+      <div class="item">📚 Ebook completo "El Sistema Presence"</div>
+      <div class="val">$39 USD</div>
+    </div>
+    <div class="stack-fila">
+      <div class="item">📱 Acceso a Presence Leads — 30 días</div>
+      <div class="val">INCLUIDO</div>
+    </div>
+    <div class="stack-fila">
+      <div class="item">🤖 Pack de prompts con herramientas de IA</div>
+      <div class="val">$29 USD</div>
+    </div>
+    <div class="stack-fila">
+      <div class="item">💬 Pack Prompts — Cierre Express</div>
+      <div class="val">$29 USD</div>
+    </div>
+    <div class="stack-fila">
+      <div class="item">✓ Checklist Cero Error — Demo en 24hs</div>
+      <div class="val">$19 USD</div>
+    </div>
+    <div class="stack-fila">
+      <div class="item">📋 Ruta Express — Primer Cliente en 7 Días</div>
+      <div class="val">$27 USD</div>
+    </div>
+    <div class="stack-fila">
+      <div class="item">👥 Comunidad privada de compradores (de por vida)</div>
+      <div class="val">Priceless</div>
+    </div>
+    <div class="stack-total">
+      <div class="label">Valor total real</div>
+      <div class="val-total">+$143 USD</div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <p style="font-size: 16px; color: var(--gris-texto); margin-bottom: 24px;">Todo eso por un único pago de:</p>
+    <div style="font-family: 'Bebas Neue', sans-serif; font-size: 80px; color: var(--verde); line-height: 1; margin-bottom: 24px;">$27.000 ARS</div>
+    <a href="javascript:void(0)" onclick="goCheckout('stack')" class="cta-btn">SÍ, QUIERO EL SISTEMA PRESENCE →</a>
+    <p class="cta-sub" style="margin-top: 14px;">Después de la compra te llega el acceso a todo por email en menos de 5 minutos</p>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- GARANTIA -->
+<section>
+  <span class="tag-seccion">Sin riesgo</span>
+  <h2>MI GARANTÍA <span class="verde">PERSONAL</span></h2>
+
+  <div class="garantia-bloque">
+    <div class="garantia-icono">🛡️</div>
+    <div class="garantia-titulo">AMALO O TE DEVUELVO TODO</div>
+    <p class="garantia-texto">
+      Probalo durante <strong>30 días completos</strong>. Si aplicás el método, buscás aunque sea un cliente con Presence Leads, y sentís que no fue lo que prometí — te devuelvo el 100% del dinero sin preguntas, sin letra chica, sin drama.<br><br>
+      Soy Fede, tengo mi agencia, mi cara y mi reputación en juego. No puedo darme el lujo de que alguien quede insatisfecho.
+    </p>
+  </div>
+
+  <!-- FAQ -->
+  <div style="margin-top: 48px;">
+    <span class="tag-seccion">Preguntas frecuentes</span>
+    <h2>¿TENÉS <span class="gris">DUDAS?</span></h2>
+    <div class="faq-lista">
+      <div class="faq-item">
+        <div class="faq-pregunta">¿Cómo recibo todo lo que compré?</div>
+        <p class="faq-respuesta">Al instante. Cuando confirmás el pago en Mercado Pago, te llega un email con el link de descarga del ebook y los bonos, <strong>más mi WhatsApp personal</strong> para activarte el acceso a Presence Leads. En menos de 5 minutos ya tenés todo.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-pregunta">¿Sirve si no sé nada de webs ni de tecnología?</div>
+        <p class="faq-respuesta">Especialmente para vos. El sistema usa IA para hacer el 90% del trabajo técnico. <strong>Si sabés usar WhatsApp, podés usar esto.</strong> No necesitás saber programar, diseñar ni tener experiencia previa.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-pregunta">¿Es pago único o hay cuotas escondidas?</div>
+        <p class="faq-respuesta"><strong>Pago único de $27.000 ARS.</strong> Los 30 días de Presence Leads están incluidos sin costo adicional. Sin cargos ocultos, sin sorpresas.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-pregunta">¿Cuánto puedo ganar con esto?</div>
+        <p class="faq-respuesta">El modelo tiene dos fuentes de ingreso. Primero cobrás el <strong>setup</strong>: un pago único por crear la web — entra el día que cerrás el trato. Después viene la <strong>mensualidad</strong>: el cliente te paga todos los meses sin que vos hagas nada nuevo. La web sigue online, vos seguís cobrando. Cada cliente que sumás se acumula arriba de los anteriores — no es un trabajo que empezás de cero cada mes, es un sistema que crece solo. <strong>Con el primer cliente ya recuperás lo que invertís hoy.</strong> Para que tengas una referencia: los setups arrancan en $100.000 ARS y las mensualidades en $30.000.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <p class="cierre-texto">
+    <strong>Mirá, te soy directo.</strong> En este momento hay miles de negocios sin web en cualquier ciudad que se te ocurra buscar. Están perdiendo clientes todos los días. Alguien los va a contactar — puede ser vos, o puede ser otra persona.<br><br>
+    <strong>Este sistema te da todo lo que necesitás para ser ese alguien.</strong><br><br>
+    Me reservo el derecho de cerrar esta oferta en cualquier momento. No por marketing — sino porque cuando suba el precio, va a subir de verdad.
+  </p>
+  <a href="javascript:void(0)" onclick="goCheckout('cierre')" class="cta-btn">QUIERO EMPEZAR HOY →</a>
+  <p class="cta-sub" style="margin-top: 14px;">
+    🔒 Pago seguro por Mercado Pago &nbsp;·&nbsp; 30 días de garantía &nbsp;·&nbsp; Acceso inmediato
+  </p>
+</div>
+
+<footer>
+  <p>© 2026 Presence · <a href="https://presence.com.ar">presence.com.ar</a> · Todos los derechos reservados</p>
+  <p style="margin-top: 6px;">Este producto es un infoproducto digital. Los resultados dependen del esfuerzo y aplicación de cada persona.</p>
+</footer>
+
+</body>
 </html>

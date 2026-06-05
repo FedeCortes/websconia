@@ -2,7 +2,7 @@ import { trackCheckoutClick } from '../utils/tracking'
 
 // CHECKOUT_URL — link directo al checkout de Shopify.
 export const CHECKOUT_URL =
-  'https://0r1qck-r1.myshopify.com/checkouts/cn/hWNCWNVAjTGu1HIFlaKOM20g/es-ar?_r=AQAB0X2BpwcObo3zHHQ9KTsntL0ltuvDaukSxJ9PkGKd97I&preview_theme_id=153871810746'
+  'https://0r1qck-r1.myshopify.com/checkouts/cn/hWNCyTcySebc04MzU2qVWtoQ/es-ar?_r=AQAB-M9ZZF1QSUztvxIZ9JkAdCYjIQ5UiMqJAsCWhU0xmbQ&preview_theme_id=153871810746'
 
 export default function CTAButton({ label = 'QUIERO EMPEZAR AHORA', size = 'md', ctaId = 'generic', className = '' }) {
   const handleClick = () => {
