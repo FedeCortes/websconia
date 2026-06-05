@@ -36,8 +36,12 @@
 
 <script>
   var CHECKOUT_URL = 'https://0r1qck-r1.myshopify.com/checkouts/cn/hWNCyTcySebc04MzU2qVWtoQ/es-ar?_r=AQAB-M9ZZF1QSUztvxIZ9JkAdCYjIQ5UiMqJAsCWhU0xmbQ&preview_theme_id=153871810746';
-  // Guard contra doble-click y event bubbling
   var _checkoutFired = false;
+
+  // Cuando el usuario vuelve con el botón atrás, resetear el guard
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) _checkoutFired = false;
+  });
 
   function goCheckout(label) {
     if (_checkoutFired) return;
