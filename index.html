@@ -9,18 +9,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- ====================================================
-     META PIXEL — pegá tu código de Meta Pixel aquí
-     ====================================================
 <script>
-  !function(f,b,e,v,n,t,s){...}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'TU_PIXEL_ID');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2283107442431623');
   fbq('track', 'PageView');
 </script>
-<noscript>
-  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/>
-</noscript>
-==================================================== -->
 
 <!-- ====================================================
      GOOGLE ANALYTICS — pegá tu tag de GA4 aquí
@@ -37,7 +37,7 @@
 <script>
   var CHECKOUT_URL = 'https://0r1qck-r1.myshopify.com/checkouts/cn/hWNCyTcySebc04MzU2qVWtoQ/es-ar?_r=AQAB-M9ZZF1QSUztvxIZ9JkAdCYjIQ5UiMqJAsCWhU0xmbQ&preview_theme_id=153871810746';
   function goCheckout(label) {
-    console.log('[tracking] checkout_click —', label || 'generic');
+    if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: label || 'generic' });
     window.location.href = CHECKOUT_URL;
   }
 </script>
@@ -838,10 +838,13 @@
 </style>
 </head>
 <body>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2283107442431623&ev=PageView&noscript=1"/>
+</noscript>
 
 <!-- BARRA SUPERIOR -->
 <div class="top-bar">
-  🔥 OFERTA DE LANZAMIENTO — <span>$67 USD</span> HOY SOLO $27.000 ARS &nbsp;·&nbsp; <strong>EL SISTEMA PRESENCE</strong> &nbsp;·&nbsp; Quedan pocas horas
+  🔥 OFERTA DE LANZAMIENTO — <span>$67 USD</span> HOY SOLO $27.000 ARS &nbsp;·&nbsp; Cierra en: <strong id="countdown-top">--:--:--</strong>
 </div>
 
 <!-- HERO -->
@@ -895,18 +898,8 @@
     </div>
     <div class="dolor-item">
       <div class="icono">✓</div>
-      <p><strong>Salís a buscar clientes y no sabés quién necesita una web</strong>
-      Mandás mensajes a conocidos, publicás en redes, y nadie te responde. No tenés un sistema para encontrar a los que de verdad necesitan el servicio.</p>
-    </div>
-    <div class="dolor-item">
-      <div class="icono">✓</div>
       <p><strong>Probaste herramientas de IA pero no lográs nada concreto</strong>
       Usaste ChatGPT, probaste cosas, pero nunca terminaste nada real que puedas mostrar ni vender. La IA sin método es un juguete, no un negocio.</p>
-    </div>
-    <div class="dolor-item">
-      <div class="icono">✓</div>
-      <p><strong>Querés independencia pero seguís dependiendo de un sueldo</strong>
-      Sabés que hay otra forma de vivir pero cada vez que intentás algo distinto, pasan meses sin resultados y terminás tirando la toalla.</p>
     </div>
   </div>
 
@@ -1023,14 +1016,14 @@
 </section>
 
 <div class="urgencia-strip">
-  ⚡ OFERTA DE LANZAMIENTO — Este precio no se repite. Me reservo el derecho de cerrarlo en cualquier momento.
+  ⚡ OFERTA DE LANZAMIENTO — Este precio cierra en <span id="countdown-strip">--:--:--</span>. Después sube a $67 USD.
 </div>
 
 <!-- PRECIO -->
 <section>
   <span class="tag-seccion">La inversión</span>
   <div class="precio-seccion">
-    <div class="precio-badge">⏰ Solo por hoy — precio de lanzamiento</div>
+    <div class="precio-badge">⏰ Cierra en: <span id="countdown-precio">--:--:--</span></div>
     <p class="precio-antes-grande">$67 USD (precio normal)</p>
     <div class="precio-ahora-grande">$27.000</div>
     <p class="precio-cuotas">ARS · Un solo pago · Sin cargos adicionales ni suscripciones</p>
@@ -1272,5 +1265,36 @@
   <p style="margin-top: 6px;">Este producto es un infoproducto digital. Los resultados dependen del esfuerzo y aplicación de cada persona.</p>
 </footer>
 
+
+<script>
+(function() {
+  var KEY = 'sp_offer_end';
+  var DURATION = 48 * 60 * 60 * 1000;
+  var end = parseInt(localStorage.getItem(KEY), 10);
+  if (!end || end < Date.now()) {
+    end = Date.now() + DURATION;
+    localStorage.setItem(KEY, end);
+  }
+  function pad(n) { return n < 10 ? '0' + n : n; }
+  function tick() {
+    var diff = end - Date.now();
+    if (diff <= 0) {
+      end = Date.now() + DURATION;
+      localStorage.setItem(KEY, end);
+      diff = DURATION;
+    }
+    var h = Math.floor(diff / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    var str = pad(h) + ':' + pad(m) + ':' + pad(s);
+    ['countdown-top', 'countdown-precio', 'countdown-strip'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = str;
+    });
+  }
+  setInterval(tick, 1000);
+  tick();
+})();
+</script>
 </body>
 </html>
