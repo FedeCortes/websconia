@@ -36,16 +36,7 @@
 
 <script>
   var CHECKOUT_URL = 'https://0r1qck-r1.myshopify.com/checkouts/cn/hWNCyTcySebc04MzU2qVWtoQ/es-ar?_r=AQAB-M9ZZF1QSUztvxIZ9JkAdCYjIQ5UiMqJAsCWhU0xmbQ&preview_theme_id=153871810746';
-  var _checkoutFired = false;
-
-  window.addEventListener('pageshow', function() {
-    _checkoutFired = false;
-  });
-
   function goCheckout(label) {
-    if (_checkoutFired) return;
-    _checkoutFired = true;
-
     // Landing solo dispara Lead — InitiateCheckout y Purchase los maneja Shopify
     if (window.fbq) {
       fbq('track', 'Lead', {
