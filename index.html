@@ -20,6 +20,12 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '2283107442431623');
   fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_name: 'Presence Curso Webs IA',
+    content_category: 'curso_webs_ia',
+    currency: 'ARS',
+    value: 27000
+  });
 </script>
 
 <!-- ====================================================
@@ -832,6 +838,39 @@
 
   footer a { color: var(--gris-texto); text-decoration: none; }
 
+  /* STICKY CTA */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(10,10,10,0.97);
+    border-top: 1px solid var(--verde);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 998;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    backdrop-filter: blur(8px);
+  }
+  .sticky-cta.visible { transform: translateY(0); }
+  .sticky-cta-left { display: flex; flex-direction: column; gap: 2px; }
+  .sticky-cta-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: var(--verde);
+    line-height: 1;
+  }
+  .sticky-cta-sub { font-size: 12px; color: var(--gris-texto); }
+  .sticky-cta .cta-btn { padding: 14px 28px; font-size: 15px; white-space: nowrap; flex-shrink: 0; }
+
+  @media (max-width: 600px) {
+    .sticky-cta { flex-direction: row; padding: 10px 16px; }
+    .sticky-cta-price { font-size: 24px; }
+    .sticky-cta .cta-btn { padding: 12px 18px; font-size: 13px; }
+  }
+
   /* URGENCIA */
   .urgencia-strip {
     background: rgba(255,68,68,0.08);
@@ -884,28 +923,33 @@
   <p style="font-family: 'Syne', sans-serif; font-size: clamp(13px, 2vw, 16px); color: var(--gris-texto); margin-bottom: 8px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Anunciando el sistema completo para</p>
   <h1>CREAR WEBS<br>CON IA Y<br><span class="verde">COBRARLAS</span><br>MENSUALMENTE</h1>
   <p class="hero-sub">
-    La app que encuentra los clientes + los prompts para crear la web en minutos + el método para cobrar mes a mes — <strong>aunque nunca hayas vendido nada antes</strong>
+    La app detecta negocios sin web. Los prompts crean la web en minutos. El método cobra mensualmente. Todo junto por primera vez — <strong>aunque nunca hayas vendido nada antes.</strong>
   </p>
 
-  <div style="margin-top: 36px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
-    <div style="text-align: center;">
-      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--verde); line-height: 1;">30 DÍAS</div>
-      <div style="font-size: 12px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 1px;">Presence Leads incluido</div>
-    </div>
-    <div style="width: 1px; background: var(--gris-borde);"></div>
-    <div style="text-align: center;">
-      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--verde); line-height: 1;">IA</div>
-      <div style="font-size: 12px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 1px;">Webs en minutos</div>
-    </div>
-    <div style="width: 1px; background: var(--gris-borde);"></div>
-    <div style="text-align: center;">
-      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--verde); line-height: 1;">✓</div>
-      <div style="font-size: 12px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 1px;">Comunidad de por vida</div>
+  <div style="margin-top: 40px;">
+    <a href="https://0r1qck-r1.myshopify.com/checkouts/cn/hWND0I0GGG3zLlnEQHpkwcte/es-ar?_r=AQABsyyXnl3a8MlGqMpe7_fbiwxUUhEKw8t-FQauuk6l5GY" onclick="trackLead('hero')" class="cta-btn">QUIERO EL SISTEMA PRESENCE →</a>
+    <div style="margin-top: 14px; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+      <span style="font-size: 13px; color: var(--gris-texto);">🔒 Pago seguro</span>
+      <span style="font-size: 13px; color: var(--gris-texto);">⚡ Acceso en 5 minutos</span>
+      <span style="font-size: 13px; color: var(--gris-texto);">🛡️ 30 días de garantía</span>
     </div>
   </div>
 
-  <div style="margin-top: 48px;">
-    <p style="font-size: 13px; color: var(--gris-texto); letter-spacing: 1px; text-transform: uppercase;">↓ Seguí leyendo</p>
+  <div style="margin-top: 52px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+    <div style="text-align: center;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--verde); line-height: 1;">1 CLIENTE</div>
+      <div style="font-size: 12px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Para recuperar lo invertido</div>
+    </div>
+    <div style="width: 1px; background: var(--gris-borde);"></div>
+    <div style="text-align: center;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--verde); line-height: 1;">7 DÍAS</div>
+      <div style="font-size: 12px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Meta: tu primer cierre</div>
+    </div>
+    <div style="width: 1px; background: var(--gris-borde);"></div>
+    <div style="text-align: center;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--verde); line-height: 1;">∞</div>
+      <div style="font-size: 12px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Ingresos recurrentes</div>
+    </div>
   </div>
 </div>
 
@@ -948,27 +992,28 @@
 <!-- PRUEBA SOCIAL TEMPRANA -->
 <div style="background: var(--gris-medio); border-top: 1px solid var(--gris-borde); border-bottom: 1px solid var(--gris-borde); padding: 32px 20px;">
   <div style="max-width: 860px; margin: 0 auto;">
-    <p style="text-align: center; font-size: 11px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-family: 'Syne', sans-serif; font-weight: 700;">Lo que dicen los que ya lo aplicaron</p>
+    <p style="text-align: center; font-size: 11px; color: var(--gris-texto); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; font-family: 'Syne', sans-serif; font-weight: 700;">Lo que dicen los negocios que reciben una web</p>
+    <p style="text-align: center; font-size: 13px; color: var(--gris-texto); margin-bottom: 24px;">Estos son los clientes que vas a poder servir. Los que pagarán tu mensualidad.</p>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
       <div style="background: var(--negro); border: 1px solid var(--gris-borde); border-radius: 10px; padding: 20px;">
         <p style="font-size: 14px; color: var(--blanco-suave); font-style: italic; line-height: 1.6; margin-bottom: 12px;">"En dos semanas ya estábamos recibiendo consultas online. Increíble."</p>
         <div style="display: flex; align-items: center; gap: 8px;">
           <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--negro); flex-shrink: 0;">MG</div>
-          <span style="font-size: 12px; color: var(--gris-texto);">Marcela G. · Buenos Aires</span>
+          <span style="font-size: 12px; color: var(--gris-texto);">Marcela G. · Local CABA · Web creada con el sistema</span>
         </div>
       </div>
       <div style="background: var(--negro); border: 1px solid var(--gris-borde); border-radius: 10px; padding: 20px;">
         <p style="font-size: 14px; color: var(--blanco-suave); font-style: italic; line-height: 1.6; margin-bottom: 12px;">"La web quedó mejor de lo que esperaba. Rápido, profesional y con seguimiento."</p>
         <div style="display: flex; align-items: center; gap: 8px;">
           <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--negro); flex-shrink: 0;">RL</div>
-          <span style="font-size: 12px; color: var(--gris-texto);">Roberto L. · GBA Norte</span>
+          <span style="font-size: 12px; color: var(--gris-texto);">Roberto L. · Comercio GBA Norte · Web creada con el sistema</span>
         </div>
       </div>
       <div style="background: var(--negro); border: 1px solid var(--gris-borde); border-radius: 10px; padding: 20px;">
         <p style="font-size: 14px; color: var(--blanco-suave); font-style: italic; line-height: 1.6; margin-bottom: 12px;">"Vale cada peso. El resultado fue excelente y Fede fue muy paciente."</p>
         <div style="display: flex; align-items: center; gap: 8px;">
           <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--negro); flex-shrink: 0;">CP</div>
-          <span style="font-size: 12px; color: var(--gris-texto);">Claudia P. · Buenos Aires</span>
+          <span style="font-size: 12px; color: var(--gris-texto);">Claudia P. · Negocio CABA · Web creada con el sistema</span>
         </div>
       </div>
     </div>
@@ -1146,18 +1191,19 @@
 
 <!-- TESTIMONIOS -->
 <section>
-  <span class="tag-seccion">Lo que dicen los clientes de presence.com.ar</span>
-  <h2>RESULTADOS <span class="verde">REALES</span></h2>
+  <span class="tag-seccion">Lo que dicen los negocios que reciben una web</span>
+  <h2>CLIENTES QUE VAS A <span class="verde">PODER CONSEGUIR</span></h2>
+  <p style="font-size: 16px; color: var(--gris-texto); max-width: 600px; margin-bottom: 8px; line-height: 1.7;">Hay miles de negocios como estos en cualquier ciudad que busques. Con Presence Leads los encontrás en segundos. Con el sistema los convertís en ingresos recurrentes.</p>
 
   <div class="testimonios-grid">
     <div class="testimonio-card">
       <div class="testimonio-estrellas">★★★★★</div>
-      <p class="testimonio-texto">"Tenía un local hace años y nunca había considerado tener web. Fede me mostró lo que perdía y en dos semanas ya estábamos recibiendo consultas online. Increíble."</p>
+      <p class="testimonio-texto">"Tenía un local hace años y nunca había considerado tener web. Me mostraron lo que perdía y en dos semanas ya estábamos recibiendo consultas online. Increíble."</p>
       <div class="testimonio-autor">
         <div class="testimonio-avatar">MG</div>
         <div>
           <div class="testimonio-nombre">Marcela G.</div>
-          <div class="testimonio-ciudad">Buenos Aires · Cliente de Presence</div>
+          <div class="testimonio-ciudad">Local gastronómico · CABA</div>
         </div>
       </div>
     </div>
@@ -1168,18 +1214,18 @@
         <div class="testimonio-avatar">RL</div>
         <div>
           <div class="testimonio-nombre">Roberto L.</div>
-          <div class="testimonio-ciudad">GBA Norte · Cliente de Presence</div>
+          <div class="testimonio-ciudad">Comercio · GBA Norte</div>
         </div>
       </div>
     </div>
     <div class="testimonio-card">
       <div class="testimonio-estrellas">★★★★★</div>
-      <p class="testimonio-texto">"No tenía idea de lo que significaba tener presencia online. Fede me explicó todo, fue paciente y el resultado fue excelente. Vale cada peso."</p>
+      <p class="testimonio-texto">"No tenía idea de lo que significaba tener presencia online. Me explicaron todo, fueron pacientes y el resultado fue excelente. Vale cada peso."</p>
       <div class="testimonio-autor">
         <div class="testimonio-avatar">CP</div>
         <div>
           <div class="testimonio-nombre">Claudia P.</div>
-          <div class="testimonio-ciudad">Buenos Aires · Cliente de Presence</div>
+          <div class="testimonio-ciudad">Servicio profesional · CABA</div>
         </div>
       </div>
     </div>
@@ -1271,7 +1317,26 @@
       </div>
       <div class="faq-item">
         <div class="faq-pregunta">¿Cuánto puedo ganar con esto?</div>
-        <p class="faq-respuesta">El modelo tiene dos fuentes de ingreso. Primero cobrás el <strong>setup</strong>: un pago único por crear la web — entra el día que cerrás el trato. Después viene la <strong>mensualidad</strong>: el cliente te paga todos los meses sin que vos hagas nada nuevo. La web sigue online, vos seguís cobrando. Cada cliente que sumás se acumula arriba de los anteriores — no es un trabajo que empezás de cero cada mes, es un sistema que crece solo. <strong>Con el primer cliente ya recuperás lo que invertís hoy.</strong> Para que tengas una referencia: los setups arrancan en $100.000 ARS y las mensualidades en $30.000.</p>
+        <p class="faq-respuesta">Dos fuentes de ingreso: el <strong>setup</strong> (pago único por crear la web) entra el día que cerrás el trato. La <strong>mensualidad</strong> llega todos los meses sin que vos hagas nada nuevo. Cada cliente que sumás se acumula arriba de los anteriores. Así se ve en la práctica:</p>
+        <div style="margin-top: 16px; background: var(--negro); border: 1px solid var(--gris-borde); border-radius: 8px; overflow: hidden;">
+          <div style="display: flex; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--gris-borde); font-size: 13px;">
+            <span style="color: var(--gris-texto);">Mes 1 — 1 cliente (setup + mensualidad)</span>
+            <span style="color: var(--verde); font-family: 'Syne', sans-serif; font-weight: 700;">+$130.000 ARS</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--gris-borde); font-size: 13px;">
+            <span style="color: var(--gris-texto);">Mes 2 — 2 clientes (1 setup nuevo + 2 mensualidades)</span>
+            <span style="color: var(--verde); font-family: 'Syne', sans-serif; font-weight: 700;">+$160.000 ARS</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--gris-borde); font-size: 13px;">
+            <span style="color: var(--gris-texto);">Mes 3 — 3 clientes (1 setup nuevo + 3 mensualidades)</span>
+            <span style="color: var(--verde); font-family: 'Syne', sans-serif; font-weight: 700;">+$190.000 ARS</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 12px 16px; background: rgba(0,255,127,0.05); font-size: 13px;">
+            <span style="color: var(--blanco); font-family: 'Syne', sans-serif; font-weight: 700;">A partir del mes 3 solo con mensualidades</span>
+            <span style="color: var(--verde); font-family: 'Bebas Neue', sans-serif; font-size: 20px;">$90.000+/mes</span>
+          </div>
+        </div>
+        <p style="margin-top: 12px; font-size: 13px; color: var(--gris-texto);">Referencia: setups desde $100.000 ARS · Mensualidades desde $30.000 ARS. <strong style="color: var(--verde);">Con el primer cliente ya recuperás lo que invertís hoy.</strong></p>
       </div>
     </div>
   </div>
@@ -1294,6 +1359,14 @@
   <p>© 2026 Presence · <a href="https://presence.com.ar">presence.com.ar</a> · Todos los derechos reservados</p>
   <p style="margin-top: 6px;">Este producto es un infoproducto digital. Los resultados dependen del esfuerzo y aplicación de cada persona.</p>
 </footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-left">
+    <div class="sticky-cta-price">$27.000 ARS</div>
+    <div class="sticky-cta-sub">Pago único · 30 días de garantía</div>
+  </div>
+  <a href="https://0r1qck-r1.myshopify.com/checkouts/cn/hWND0I0GGG3zLlnEQHpkwcte/es-ar?_r=AQABsyyXnl3a8MlGqMpe7_fbiwxUUhEKw8t-FQauuk6l5GY" onclick="trackLead('sticky')" class="cta-btn">COMPRAR AHORA →</a>
+</div>
 
 
 <script>
@@ -1324,6 +1397,19 @@
   }
   setInterval(tick, 1000);
   tick();
+})();
+
+(function() {
+  var bar = document.getElementById('stickyCta');
+  var hero = document.querySelector('.hero');
+  function check() {
+    if (window.scrollY > hero.offsetHeight + 80) {
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', check, { passive: true });
 })();
 </script>
 </body>
